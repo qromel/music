@@ -1,0 +1,197 @@
+    body {
+    font-family: 'MyFont'
+}
+
+
+.title {
+    font-size: 90px;
+    position: fixed;
+    top: 10px; /* ページの上からの位置を指定 */
+    left: 20px; /* ページの左からの位置を指定 */
+    z-index: 10; /* 他の要素より前面に表示するための値 */
+}
+
+.title {
+    text-decoration: none; /* テキストの下線を消す */
+    color: inherit; /* 親の色を継承 */
+    display: flex; /* ボタンのように表示 */
+}
+
+.text {
+    margin: auto;
+
+    text-align: left;
+    max-width: 1000px;
+    font-size: 20px;
+    line-height: 1.6;
+    box-sizing: border-box; /* ボックスサイズ調整 */
+    display: block; /* 表示形式を指定 */
+    opacity: 0; /* 初期状態で透明 */
+    transform: translateY(20px); /* 下から出現 */
+    animation: fadeInUp 0.4s ease forwards
+}
+
+.text a {
+    text-decoration: none; /* 下線を削除 */
+    color: inherit; /* テキストの色を継承 */
+}
+
+
+.midashi {
+    text-align: right;
+    font-size: 200px;
+    margin-top: -75px; 
+    font-weight: 900;
+}
+
+.centertext {
+    margin: auto;
+    margin-top: 150px; 
+    text-align: center;
+    font-size: 25px;
+    line-height: 1.6;
+    opacity: 0; /* 初期状態で透明 */
+    transform: translateY(20px); /* 下から出現 */
+    animation: fadeInUp 1.5s ease forwards
+}
+
+.centertext a {
+    text-decoration: none; /* 下線を削除 */
+    color: inherit; /* テキストの色を継承 */
+}
+
+
+
+
+/*フォント*/
+
+@font-face {
+    font-family: 'MyFont';
+    src: url('fonts/montserrat.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+
+/*周期表*/
+.periodic-table {
+    display: grid;
+    grid-template-columns: repeat(18, 1fr); /* 18列 */
+    gap: 10px;
+    max-width: 1200px;
+    margin: auto;
+    margin-top: 100px;
+    padding: 20px;
+    grid-auto-rows: minmax(50px, auto); /* 各行の高さ */
+}
+.element, .empty {
+    border: 1px solid #333;
+    border-radius: 4px;
+    padding: 10px;
+    text-align: center;
+    font-size: 25px;
+    font-weight: 900;
+    opacity: 0; /* 初期状態で透明 */
+    transform: translateY(20px); /* 下から出現 */
+    animation: fadeInUp 0.6s ease forwards; /* アニメを適用 */
+    animation-delay: calc(0.1s * var(--i)); /* 各ブロックの遅延 */
+}
+
+/* アニメーション定義 */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.empty {
+    background-color: transparent; /* 空白のため背景を透明に */
+    color: transparent; /* テキストも透明にして空白を表現 */
+}
+
+.void {
+    background-color: transparent; /* 背景を透明にして空白を表現 */
+    border: none #333;
+    border-radius: 4px;
+}
+
+a.element {
+    text-decoration: none; /* テキストの下線を消す */
+    color: inherit; /* 親の色を継承 */
+    display: flex; /* ボタンのように表示 */
+    align-items: center;
+    justify-content: center;
+}
+a.element:hover {
+    background-color: #000;
+    color: #fff; /* ホバー時の色変化 */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+
+/*個別の元素*/
+
+.void:nth-child(2) {
+    grid-column: 2 / span 16;
+    grid-row: 1;
+}
+
+.void:nth-child(6) {
+    grid-column: 3 / span 10;
+    grid-row: 2;
+}
+
+.void:nth-child(15) {
+    grid-column: 3 / span 10;
+    grid-row: 3;
+}
+
+.void:nth-child(128) {
+    grid-column: 1 / span 2;
+    grid-row: 8;
+}
+
+.void:nth-child(94) {
+    grid-column: 1 / span 2;
+    grid-row: 8;
+}
+
+.void:nth-child(109) {
+    grid-column: 17 / span 2;
+    grid-row: 8;
+}
+
+.void:nth-child(110) {
+    grid-column: 1 / span 2;
+    grid-row: 9;
+}
+
+.void:nth-child(125) {
+    grid-column: 17 / span 2;
+    grid-row: 9;
+}
+
+
+/*ボタン*/
+
+.outline-button {
+    background-color: transparent;
+    color: #3498db;
+    padding: 10px 20px;
+ border: none;
+    cursor: pointer;
+transition: background-color 0.6s ease, color 0.6s ease;}
+
+.outline-button:hover {
+    background-color: #3498db;
+    color: #fff; /* ホバー時に背景色と文字色を反転 */
+}
+
+
